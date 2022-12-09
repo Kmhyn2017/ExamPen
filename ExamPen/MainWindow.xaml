@@ -1,0 +1,55 @@
+﻿<Window
+    x:Class="ExamPen.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ExamPen"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:canvas="using:Microsoft.Graphics.Canvas.UI.Xaml"
+    mc:Ignorable="d">
+
+    <Grid Width="1300" Height="800" ColumnDefinitions="780, Auto, *" RowDefinitions ="50, Auto, *">
+        <StackPanel x:Name="TitleBar" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <!-- 메뉴바 -->
+            <TextBlock
+                Margin="10,0,0,0"
+                VerticalAlignment="Center"
+                Text="Andong Nation University"
+                TextWrapping="NoWrap"/>
+            <ContentPresenter Background="Gainsboro" CornerRadius="8">
+                <MenuBar>
+                    <MenuBarItem Title="File">
+                        <MenuFlyoutItem Text="New File" Click="MenuFlyoutItem_Click" />
+                        <MenuFlyoutItem Text="Save" Click="MenuFlyoutItem_Click_1" />
+                        <MenuFlyoutItem Text="Load" Click="MenuFlyoutItem_Click_2" />
+                        <MenuFlyoutItem Text="Exit" Click="MenuFlyoutItem_Click_3" />
+                    </MenuBarItem>
+                </MenuBar>
+            </ContentPresenter>
+            <Slider AutomationProperties.Name="simple slider" Width="200" Grid.Column="0" Grid.Row="0"
+            ValueChanged="Slider_ValueChanged"/>
+            <Button x:Name="myWrite" Click="myWrite_Click">Write</Button>
+            <Button x:Name="myRead" Click="myRead_Click">Read</Button>
+            <Button x:Name="myClear" Click="myClear_Click">Clear</Button>
+            <Button x:Name="CloseColor" Click="CloseColor_Click">감추기</Button>
+            <Button x:Name="OpenColor" Click="OpenColor_Click">보이기</Button>
+        </StackPanel>
+        <canvas:CanvasControl Grid.Column="0" Grid.Row="1"
+        PointerEntered="CanvasControl_PointerEntered"
+        PointerPressed="CanvasControl_PointerPressed"
+        PointerReleased="CanvasControl_PointerReleased"
+        PointerMoved="CanvasControl_PointerMoved"
+        Draw="CanvasControl_Draw" ClearColor="CornflowerBlue"/>
+        <ColorPicker Grid.Column="1" Grid.Row="1" 
+        x:Name="ColorPicker"
+        ColorChanged="ColorPicker_ColorChanged"
+        ColorSpectrumShape="Ring"
+        IsMoreButtonVisible="False"
+        IsColorSliderVisible="True"
+        IsColorChannelTextInputVisible="True"
+        IsHexInputVisible="True"
+        IsAlphaEnabled="False"
+        IsAlphaSliderVisible="True"
+        IsAlphaTextInputVisible="True" />
+    </Grid>
+</Window>
