@@ -10,7 +10,9 @@
                 Text="Andong Nation University"
                 TextWrapping="NoWrap"/>
 ```
+
 윈도우 제목을 만들위해서 다음과 같은 텍스트블록에 텍스트 작성합니다.   
+
 ---
 #### 메뉴 추가
 ```
