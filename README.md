@@ -280,3 +280,4 @@ void winrt::ExamPen::implementation::MainWindow::CloseColor_Click(winrt::Windows
 
 ## 구현
 ---
+https://user-images.githubusercontent.com/92089428/206710257-ca0fcc30-a32e-463f-bfa3-524c548b229b.mp4
